@@ -1,0 +1,104 @@
+\documentclass[a4paper,brazil,12pt,nofootinbib,aps,pra]{revtex4}
+
+% Pacotes de formatação
+\usepackage{ragged2e}
+
+% Configurações de idioma
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+
+% Configuração dos símbolos matemáticos e equações
+\usepackage{amsmath}
+\usepackage{slashed}
+\def\slash#1{#1\!\!\! /}
+\usepackage{bm}       % bold math
+\usepackage{braket}   % \bra{}, \ket{} e \braket{} para Física Quântica
+\usepackage{nicefrac} % \nicefrac{}{} para frações estilizadas em declive
+\usepackage{bbm}      % fonte \mathbbm{} do símbolo 1 da matriz identidade e do
+                      % R estilizado do conjunto dos número reais
+\usepackage{mathrsfs} % fonte \mathscr{} do s�mbolo L da densidade lagrangiana
+\usepackage{multirow} % c�lulas com m�ltiplas linhas ou colunas em tabelas
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{ 
+  language=Python, 
+  basicstyle=\ttfamily\footnotesize, 
+  keywordstyle=\color{blue}, 
+  commentstyle=\color{gray}, 
+  stringstyle=\color{green}, 
+  showstringspaces=false,
+  breaklines=true,
+  frame=single
+}
+
+% Configura��o do formato das figuras
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+\newcommand{\incps}[5]{\includegraphics[#2,#3][#4,#5]{#1}}
+\newcommand{\incpicwh}[3]{\includegraphics[width=#2,height=#3]{#1}}
+\usepackage[justification=centering]{caption}
+\DeclareCaptionFont{xipt}{\fontsize{11}{13}\mdseries}
+\usepackage[font=xipt,labelfont=bf]{caption}
+
+% Pacote que permite o controle do espa�amento entre linhas:
+\usepackage{setspace}
+\linespread{\baselinestretch}
+
+% Configuração de Verbatim
+\usepackage{moreverb}
+
+% Bold symbol macro for standard LaTeX users
+\makeatletter
+
+% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+\makeatother
+
+% Hyper References: Because it's very nice to just click and go!
+\usepackage{hyperref}
+\hypersetup{
+citebordercolor=0 .75 1,
+linktocpage=true
+}
+
+
+%   TRADUÇÃO DO REVTEX4  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Comandos para traduzir para o Português palavras geradas automaticamente
+\makeatletter
+\def\tocname{Sumário}
+\def\andname{e}
+\def\Dated@name{Data: }
+\def\lofname{Lista de Figuras}
+\def\lotname{Lista de Tabelas}
+\def\refname{Referências}
+\def\today{\number\day \space de \space \ifcase\month\or janeiro\or fevereiro\or
+mar{\c c}o\or abril\or maio\or junho\or julho\or agosto\or setembro\or outubro\or 
+novembro\or dezembro\fi \space de \space \number\year}
+\makeatother
+
+
+%  ESQUELETO DO ARQUIVO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\input{Capa}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+%********************************************************************%
+% Partes do relatório
+%********************************************************************%
+
+\input{Introducao} 
+
+\input{Corpo do texto}
+
+\end{document}
+
+%********************************************************************%
+%********************************************************************%
